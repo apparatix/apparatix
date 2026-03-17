@@ -1,12 +1,10 @@
 {
   inputs,
-  nixpkgs,
-  lib,
   ...
 }:
 {
 
-  nixpkgs.boot.loader = {
+  flake.nixosModules.nixpkgs.boot.loader = {
 
     efi = {
       canTouchEfiVariables = true;
@@ -17,6 +15,7 @@
       efiSupport = true;
       device = "nodev";
     };
+
   };
 
 }
